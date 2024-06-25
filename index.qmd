@@ -1,0 +1,44 @@
+---
+title: "Cheeses: Milk type vs Country"
+author: "Aashna Patel"
+format: html
+execute: 
+  echo: false
+  message: false
+  warning: false
+---
+Check out cheese production in Germany, Italy, and France with an animated graph showing milk types used. See how cow, sheep, and goat milk affect these cheeses in cool animations. The following data was pulled from the tidyverse package and posted on the TidyTuesday Github. Learn about the different cheese styles and cultural traditions in Europe!
+```{r}
+
+library(tidyverse)
+library(gganimate)
+
+cheeses <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-06-04/cheeses.csv')
+```
+
+```{r}
+static_plot <- cheeses |>
+  filter(country %in% c("Germany", "Italy", "France")) |>
+    select(country, milk, cheese) |>
+      mutate(country_milk = paste(country, milk, sep = "_"))|>
+          ggplot(aes(x = country, fill = milk)) +
+          geom_bar(position = "stack") +
+          labs(title = "Variation in Cheese Production by Milk Type Across European Countries",
+           x = "Country",
+           y = "Number of Cheeses from this Milk Type",
+           fill = "Milk Type",
+          subtitle = "Exploring the usage of various milk types in cheese production", 
+          caption = "Source: TidyTuesday Github: Cheeses") +
+      theme_minimal() +
+      theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
+
+```{r}
+animated_plot <- static_plot +
+  transition_states(milk, transition_length = 2, state_length = 1, wrap = TRUE)
+
+animated_plot
+```
+
+The animated graph provides a clear picture of how cow, sheep, and goat milk influence the variety of cheeses produced in these three countries. More than any other milk type, cow milk is by far the most common. This insight into cheese production underscores the cultural significance of dairy choices in shaping culinary identities across Europe.
