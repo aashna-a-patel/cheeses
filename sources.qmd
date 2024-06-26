@@ -1,0 +1,31 @@
+---
+title: "Sources"
+author: "Aashna Patel"
+format: html
+execute: 
+  echo: false
+  message: false
+  warning: false
+---
+This data was pulled from TidyTuesday, a Github account which posts new sets of data every week. Specifically, this data came from the dataset 'cheeses'.
+
+
+Packages used include:
+--------------------------------------------
+tidyverse
+
+ggplot2
+
+gganimate
+
+dplyr
+
+-----------------------------------------------
+Visit the source of this dataset:
+https://github.com/rfordatascience/tidytuesday/tree/master 
+
+Made with RStudio
+```{r}
+
+```
+
