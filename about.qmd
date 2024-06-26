@@ -1,9 +1,12 @@
 ---
 title: "About This Page"
 ---
-
+Hi! My name is Aashna Patel and I am a rising Junior from Illinois. You can contact me at aashnapatel2008@gmail.com.
 Visit my Github page:
 https://github.com/aashna-a-patel
 
-Visit the source of this dataset:
-https://github.com/rfordatascience/tidytuesday/tree/master 
+This project was created through Kane's Data Science Bootcamp
+
+```{r}
+```
+

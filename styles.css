@@ -1,0 +1,11 @@
+/* css styles */
+
+.navbar { 
+    background-color: #f7d9b2;
+    font-family: monospace;
+}
+body {
+    background-color:#f7f0d7;
+    color: #9c3363;
+    font-family: Comic Sans MS;
+}

@@ -9,21 +9,24 @@ execute:
 ---
 Check out cheese production in Germany, Italy, and France with an animated graph showing milk types used. See how cow, sheep, and goat milk affect these cheeses in cool animations. The following data was pulled from the tidyverse package and posted on the TidyTuesday Github. Learn about the different cheese styles and cultural traditions in Europe!
 ```{r}
-
+# load up the necessary libraries
 library(tidyverse)
 library(gganimate)
-
+# provide the data for the graph
 cheeses <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-06-04/cheeses.csv')
 ```
 
 ```{r}
+# begin creating the graph
 static_plot <- cheeses |>
   filter(country %in% c("Germany", "Italy", "France")) |>
     select(country, milk, cheese) |>
       mutate(country_milk = paste(country, milk, sep = "_"))|>
-          ggplot(aes(x = country, fill = milk)) +
+         # we are using a bar graph
+  ggplot(aes(x = country, fill = milk)) +
           geom_bar(position = "stack") +
-          labs(title = "Variation in Cheese Production by Milk Type Across European Countries",
+         # add the text around the graph
+   labs(title = "Variation in Cheese Production by Milk Type Across European Countries",
            x = "Country",
            y = "Number of Cheeses from this Milk Type",
            fill = "Milk Type",
@@ -35,6 +38,7 @@ static_plot <- cheeses |>
 ```
 
 ```{r}
+# animate this graph to create a cool visual effect
 animated_plot <- static_plot +
   transition_states(milk, transition_length = 2, state_length = 1, wrap = TRUE)
 

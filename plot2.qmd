@@ -1,0 +1,36 @@
+---
+title: "Types"
+author: "Aashna Patel"
+format: html
+execute: 
+  echo: false
+  message: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(gganimate)
+cheeses <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-06-04/cheeses.csv')
+```
+
+This next graph is a plot of the type of cheese most commonly made in France, Germany, and Italy, each represented by a color.
+
+```{r}
+cheeses  |>
+  filter(flavor %in% c("creamy", "nutty", "mild", "tangy", "sweet", "sharp", "earthy", "buttery", "salty", "fruity")) |> 
+  filter(country %in% c("Germany", "France", "Italy")) |> 
+
+  ggplot(cheeses,mapping = aes(y = type, x = region, color = country)) +
+  geom_point() +
+  labs(
+    title = "Type of Cheese Commonly Made in Each Country",
+    x = "Region",
+    y = "Type of Cheese",
+    caption = "Source: TidyTuesday Github: Cheeses"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+```
+
+This scatter plot provides a clear image of the certain preferences the various countries have when it comes to cheese production. The regions on the x-axis are ones found in all three countries known for making cheese. Concluding from this graph, France has a higher preference of making softer cheeses while Germany has a higher preference of making semi-soft and harder cheeses. Italy does not seem to have much of a preference in cheese type.

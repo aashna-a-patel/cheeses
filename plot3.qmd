@@ -1,0 +1,43 @@
+---
+title: "Flavors"
+author: "Aashna Patel"
+format: html
+execute: 
+  echo: false
+  message: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(gganimate)
+cheeses <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-06-04/cheeses.csv')
+```
+This pie chart shows the distribution of flavors across France, Germany, and Italy combined. 
+
+```{r}
+cheese_counts <- cheeses %>%
+  filter(flavor %in% c("creamy", "nutty", "mild", "tangy", "sweet", "sharp", "earthy", "buttery", "salty", "fruity")) %>%
+  count(flavor) %>%
+  arrange(desc(flavor))
+
+cheese_counts <- cheese_counts %>%
+  mutate(percent = n / sum(n) * 100)
+
+# Plotting pie chart
+ggplot(cheese_counts, aes(x = "", y = n, fill = flavor)) +
+  geom_bar(stat = "identity", width = 1, color = "white") +
+  geom_text(aes(label = paste0(round(percent), "%")), position = position_stack(vjust = 0.5))+  # Create pie chart using bar plot
+  coord_polar("y", start = 0) +  # Convert bar plot to polar coordinates for pie chart
+  labs(
+    title = "Distribution of Flavors in Common Cheese Types",
+    fill = "Flavor",
+    caption = "Source: TidyTuesday - Cheeses Dataset"
+  ) +
+  theme_void() +  # Remove axis and grid lines
+  scale_fill_viridis_d(option = "C", begin = 0.2, end = 0.8)  # Use viridis color palette
+```
+
+
+The pie chart displays the distribution of flavors like creamy, nutty, tangy, sweet, and others in common cheese types. It emphasizes creamy and nutty flavors as prevalent, guiding producers in meeting consumer preferences and diversifying product offerings effectively. 
+Among teh flavors, creamy and nutty are the most popular. This helps cheese makers know what consumers prefer and make cheeses that people will want to buy.

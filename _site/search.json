@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About This Page",
+    "section": "",
+    "text": "Hi! My name is Aashna Patel and I am a rising Junior from Illinois. You can contact me at aashnapatel2008@gmail.com. Visit my Github page: https://github.com/aashna-a-patel\nThis project was created through Kane’s Data Science Bootcamp"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Cheeses: Milk type vs Country",
+    "section": "",
+    "text": "Check out cheese production in Germany, Italy, and France with an animated graph showing milk types used. See how cow, sheep, and goat milk affect these cheeses in cool animations. The following data was pulled from the tidyverse package and posted on the TidyTuesday Github. Learn about the different cheese styles and cultural traditions in Europe!\n\n\n\n\n\n\n\n\n\nThe animated graph provides a clear picture of how cow, sheep, and goat milk influence the variety of cheeses produced in these three countries. More than any other milk type, cow milk is by far the most common. This insight into cheese production underscores the cultural significance of dairy choices in shaping culinary identities across Europe."
+  },
+  {
+    "objectID": "sources.html",
+    "href": "sources.html",
+    "title": "Sources",
+    "section": "",
+    "text": "This data was pulled from TidyTuesday, a Github account which posts new sets of data every week. Specifically, this data came from the dataset ‘cheeses’."
+  },
+  {
+    "objectID": "sources.html#packages-used-include",
+    "href": "sources.html#packages-used-include",
+    "title": "Sources",
+    "section": "Packages used include:",
+    "text": "Packages used include:\ntidyverse\nggplot2\ngganimate\ndplyr\n\nVisit the source of this dataset: https://github.com/rfordatascience/tidytuesday/tree/master\nMade with RStudio"
+  },
+  {
+    "objectID": "plot2.html",
+    "href": "plot2.html",
+    "title": "Types",
+    "section": "",
+    "text": "This next graph is a plot of the type of cheese most commonly made in France, Germany, and Italy, each represented by a color.\n\n\n\n\n\n\n\n\n\nThis scatter plot provides a clear image of the certain preferences the various countries have when it comes to cheese production. The regions on the x-axis are ones found in all three countries known for making cheese. Concluding from this graph, France has a higher preference of making softer cheeses while Germany has a higher preference of making semi-soft and harder cheeses. Italy does not seem to have much of a preference in cheese type."
+  },
+  {
+    "objectID": "plot3.html",
+    "href": "plot3.html",
+    "title": "Flavors",
+    "section": "",
+    "text": "This pie chart shows the distribution of flavors across France, Germany, and Italy combined.\n\n\n\n\n\n\n\n\n\nThe pie chart displays the distribution of flavors like creamy, nutty, tangy, sweet, and others in common cheese types. It emphasizes creamy and nutty flavors as prevalent, guiding producers in meeting consumer preferences and diversifying product offerings effectively. Among teh flavors, creamy and nutty are the most popular. This helps cheese makers know what consumers prefer and make cheeses that people will want to buy."
+  },
+  {
+    "objectID": "index.knit.html",
+    "href": "index.knit.html",
+    "title": "Cheeses: Milk type vs Country",
+    "section": "",
+    "text": "Check out cheese production in Germany, Italy, and France with an animated graph showing milk types used. See how cow, sheep, and goat milk affect these cheeses in cool animations. The following data was pulled from the tidyverse package and posted on the TidyTuesday Github. Learn about the different cheese styles and cultural traditions in Europe!\n\n\n\n\n\n\n\n\n\nThe animated graph provides a clear picture of how cow, sheep, and goat milk influence the variety of cheeses produced in these three countries. More than any other milk type, cow milk is by far the most common. This insight into cheese production underscores the cultural significance of dairy choices in shaping culinary identities across Europe."
+  }
+]

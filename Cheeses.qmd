@@ -1,0 +1,42 @@
+---
+title: "Cheese 06-20"
+author: "Aashna"
+format: html
+execute: 
+  echo: false
+  message: false
+  warning: false
+---
+```{r}
+library(tidyverse)
+library(gganimate)
+cheeses <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-06-04/cheeses.csv')
+```
+
+```{r}
+static_plot <- cheeses |>
+  filter(country %in% c("United States", "France", "Italy", "Switzerland")) |>
+    select(country, milk, cheese) |>
+      mutate(country_milk = paste(country, milk, sep = "_"))|>
+          ggplot(aes(x = country, fill = milk)) +
+          geom_bar(position = "dodge") +
+          labs(title = "Milk Type used in Cheeses from Different Countries",
+           x = "Country",
+           y = "Number of Cheeses",
+           fill = "Milk Type",
+          subtitle = "Mostly cow milk is used in making cheese") +
+      theme_minimal() +
+      theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
+```{r}
+animated_plot <- static_plot +
+  transition_states(milk, transition_length = 2, state_length = 1, wrap = TRUE)
+
+animated_plot
+```
+
+
+```
+```
+
